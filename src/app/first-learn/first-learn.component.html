@@ -1,0 +1,124 @@
+<br>
+<h2>This is First Learn Component</h2>
+
+<h2>InterPolation</h2>
+<p>Name - {{name}} , Salary - {{salary}}</p>  
+
+<hr>
+
+<!-- For Property we write in [] Brackets  --> 
+<h2>Property Binding</h2>
+<button [disabled]="isdisabled">Click Me</button>  
+
+<br>
+<hr>
+
+<!-- For Event we write in () Brackets  --> 
+<h2>Event Binding</h2>
+<label for="text">Enter Input</label> <br>
+<input type="text" (change)="onChange($event)">
+
+<br>
+<hr>
+
+<!-- To Way Data Binding-->
+<h2>To Way Data Binding</h2>
+<!-- <input type="text" [value]="inputval" (input)="onChange($event)">  -->
+<input type="text" [(ngModel)]="inputval">  <!-- For Direct We import the FormsModule
+                                              in First-learn Component-->    
+<p>Input Value is : {{inputval}}</p>
+
+<br>
+<hr>
+
+<!-- If-->
+<h2>Conrol Flow : &#64;If </h2>
+<p>Check Which Number is Large in {{a}} & {{b}}</p>
+<h3>Output : @if (a > b) {
+    {{a}} is greater than {{b}}
+  } @else if (b > a) {
+    {{a}} is less than {{b}}
+  } @else {
+    {{a}} is equal to {{b}}
+  }
+</h3> 
+
+<br>
+<hr>
+
+<!-- For Loop-->
+<h2>Conrol Flow : &#64;For</h2>
+<div>
+    @for (i of users; track i.id) {
+        @if(i.salary>5000) {
+            <p>Name - {{i.name}} , Status - {{i.isSingle?"Single":"Married"}} , Salary - {{i.salary}}</p>  
+        }
+        @else {
+            <p>Name - {{i.name}} , Status - {{i.isSingle?"Single":"Married"}} , Salary - Hidden</p>  
+        }
+    }
+</div>
+
+<br>
+<hr>
+
+<!-- Switch Conrol Flow-->
+<h2>&#64;Switch Conrol Flow</h2>
+@switch (sc) {
+    @case (1) {
+        <p>Value is : 1</p>
+    }
+    @case (2) {
+        <p>Value is : 2</p>
+    }
+    @case (3) {
+        <p>Value is : 3</p>
+    }
+    @default {
+        <p>Value is : NA</p>
+    }
+}
+
+<br>
+<hr>
+
+<!-- For and If Usinf ngFor and ngIf-->
+<h2>Directive : ngFor and ngIf</h2>
+
+<div *ngFor="let i of users"> <!-- For Direct We import the CommonModule in First-learn Component-->  
+        <p *ngIf="i.salary>7000;else elseblock">Name - {{i.name}} , Status - {{i.isSingle?"Single":"Married"}} , Salary - {{i.salary}}</p>  
+    <ng-template #elseblock>
+        <p>Name - {{i.name}} , Status - {{i.isSingle?"Single":"Married"}} , Salary - Hidden</p>  
+    </ng-template>
+</div>
+
+<br>
+<hr>
+
+<!-- Directive : ngClass -->
+<h2>Directive : ngClass</h2>
+<button (click)="getMessage()">Click Me</button> 
+<b> 
+    <h3 [ngClass]="{'text-darkgreen':  isClicked}"> {{message}} </h3> 
+</b> 
+
+<br>
+<hr>
+
+<!-- Directive : ngStyle -->
+<h2>Directive : ngStyle</h2>
+<div [ngStyle]="{'background-color':'gray','color':'black','text-align':'center','width':'120px','height':'20px','padding':'10px'}">Hello Yashil Busa</div>
+
+<br>
+<hr>
+
+<!-- Component Communication -->
+<h2>Parent to Child , Data Transfer Using &#64;Input</h2>
+<p>Name : {{friendname}} , Salary : {{s}}</p>
+
+<br>
+<hr>
+
+<h2>Child to Parent , Data Transfer Using &#64;Output & EventEmitter</h2>
+<button (click)="sendData()">Send Data</button>
+<p>You Can Show The Output on Console.</p>
