@@ -20,7 +20,7 @@ function formatname(value:string){
   styleUrl: './first-learn.component.css'
 })
 
-export class FirstLearnComponent implements OnInit,OnDestroy,OnChanges{
+export class FirstLearnComponent {
   name = "Yashil";
   salary = 10000;
   isdisabled = false;
@@ -73,23 +73,5 @@ export class FirstLearnComponent implements OnInit,OnDestroy,OnChanges{
       console.log("Constructor Called");
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-      //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-      //Add '${implements OnChanges}' to the class.
-      console.log("ngOnChanges Called",changes);
-      
-    }
-
-    ngOnInit(): void {
-      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-      //Add 'implements OnInit' to the class.
-      console.log("ngOnInit Called",this.name);
-    }
-
-    ngOnDestroy() {
-      //Called once, before the instance is destroyed.
-      //Add 'implements OnDestroy' to the class.
-      console.log("Component Destroyed");
-    }
     
 } 

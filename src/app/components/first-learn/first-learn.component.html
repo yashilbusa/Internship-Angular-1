@@ -82,19 +82,6 @@
 <br>
 <hr>
 
-<!-- For and If Usinf ngFor and ngIf-->
-<h2>Directive : ngFor and ngIf</h2>
-
-<div *ngFor="let i of users"> <!-- For Direct We import the CommonModule in First-learn Component-->  
-        <p *ngIf="i.salary>7000;else elseblock">Name - {{i.name}} , Status - {{i.isSingle?"Single":"Married"}} , Salary - {{i.salary}}</p>  
-    <ng-template #elseblock>
-        <p>Name - {{i.name}} , Status - {{i.isSingle?"Single":"Married"}} , Salary - Hidden</p>  
-    </ng-template>
-</div>
-
-<br>
-<hr>
-
 <!-- Directive : ngClass -->
 <h2>Directive : ngClass</h2>
 <button (click)="getMessage()">Click Me</button> 
