@@ -6,14 +6,12 @@
 
 <hr>
 
-<!-- For Property we write in [] Brackets  --> 
 <h2>Property Binding</h2>
 <button [disabled]="isdisabled">Click Me</button>  
 
 <br>
 <hr>
 
-<!-- For Event we write in () Brackets  --> 
 <h2>Event Binding</h2>
 <label for="text">Enter Input</label> <br>
 <input type="text" (change)="onChange($event)">
@@ -21,17 +19,14 @@
 <br>
 <hr>
 
-<!-- To Way Data Binding-->
 <h2>To Way Data Binding</h2>
 <!-- <input type="text" [value]="inputval" (input)="onChange($event)">  -->
-<input type="text" [(ngModel)]="inputval">  <!-- For Direct We import the FormsModule
-                                              in First-learn Component-->    
+<input type="text" [(ngModel)]="inputval">  
 <p>Input Value is : {{inputval}}</p>
 
 <br>
 <hr>
 
-<!-- If-->
 <h2>Conrol Flow : &#64;If </h2>
 <p>Check Which Number is Large in {{a}} & {{b}}</p>
 <h3>Output : @if (a > b) {
@@ -46,7 +41,6 @@
 <br>
 <hr>
 
-<!-- For Loop-->
 <h2>Conrol Flow : &#64;For</h2>
 <div>
     @for (i of users; track i.id) {
@@ -62,7 +56,6 @@
 <br>
 <hr>
 
-<!-- Switch Conrol Flow-->
 <h2>&#64;Switch Conrol Flow</h2>
 @switch (sc) {
     @case (1) {
@@ -82,26 +75,23 @@
 <br>
 <hr>
 
-<!-- Directive : ngClass -->
 <h2>Directive : ngClass</h2>
 <button (click)="getMessage()">Click Me</button> 
 <b> 
-    <!-- <h3 [ngClass]="{'text':  isClicked}"> {{message}} </h3>  -->   <!-- Using an Object-->
-    <!--  <h3 [ngClass]="['text']"> {{message}} </h3>  -->               <!-- Using an Array-->
-    <h3 [ngClass]="'text'"> {{message}} </h3>                 <!-- Using String-->
+    <h3 [ngClass]="{'text':  isClicked}"> {{message}} </h3>    
+     <h3 [ngClass]="['text']"> {{message}} </h3>              
+    <h3 [ngClass]="'text'"> {{message}} </h3>                
 </b> 
 
 <br>
 <hr>
 
-<!-- Directive : ngStyle -->
 <h2>Directive : ngStyle</h2>
 <div [ngStyle]="{'background-color':'gray','color':'black','text-align':'center','width':'120px','height':'20px','padding':'10px'}">Hello Yashil Busa</div>
 
 <br>
 <hr>
 
-<!-- Component Communication -->
 <h2>Parent to Child , Data Transfer Using &#64;Input</h2>
 <p>Name : {{friendname}} , Salary : {{s}}</p>
 
@@ -115,25 +105,22 @@
 <br>
 <hr>
 
-<!-- Component Communication -->
-
 <h2>Pipe & Custom Pipe</h2>
-<p>Name - {{name | titlecase}} , Salary - {{salary}}</p>  <!-- Capital First Character in  String -->
-<p>Name - {{name | uppercase}} , Salary - {{salary}}</p>  <!-- All Characters convert into Uppercase -->
-<p>Name - {{name | titlecase}} , Salary - {{salary | currency:"INR"}}</p>  <!-- Currency Pipe With INR Argument -->
-<p>Name - {{name | titlecase}} , Salary - {{salary | currency}}</p>  <!-- Currency Pipe and its by default take dollor -->
+<p>Name - {{name | titlecase}} , Salary - {{salary}}</p> 
+<p>Name - {{name | uppercase}} , Salary - {{salary}}</p>  
+<p>Name - {{name | titlecase}} , Salary - {{salary | currency:"INR"}}</p> 
+<p>Name - {{name | titlecase}} , Salary - {{salary | currency}}</p> 
 
 <p>Today : {{currentDate | date:"fullDate"}} </p> 
 
 <p>{{ { name: 'Yashil Busa', age: 21 } | json }}</p>
 
-<p>Phone Number : {{phoneNum | countryCode:"USA"}}</p>  <!-- Custom Pipe -->
+<p>Phone Number : {{phoneNum | countryCode:"USA"}}</p> 
 
 
 <br>
 <hr>
 
-<!-- Custom Directives-->
 <h2>Custom Directive : HostBinding & HostListner</h2>
 <p>When You Mouse Enter on Element, It is Print <b>Mouse Entered</b> in Console and for Leaving <b>Mouse Leaved</b></p>
 <span appHighlight>Name - {{name}} , Salary - {{salary}}</span>
