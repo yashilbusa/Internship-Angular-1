@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { input , Output } from '@angular/core';
 import { User } from '../../../models/user';
+import { CountryCodePipe } from '../../pipes/country-code.pipe';
 
 
 function formatname(value:string){
@@ -13,7 +14,7 @@ function formatname(value:string){
 @Component({
   selector: 'app-first-learn',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,CountryCodePipe],
   templateUrl: './first-learn.component.html',
   styleUrl: './first-learn.component.css'
 })
@@ -65,4 +66,5 @@ export class FirstLearnComponent {
     }
 
     currentDate = new Date();
+    phoneNum = 9876543210;
 } 

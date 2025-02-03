@@ -99,7 +99,9 @@
 <h2>Directive : ngClass</h2>
 <button (click)="getMessage()">Click Me</button> 
 <b> 
-    <h3 [ngClass]="{'text-darkgreen':  isClicked}"> {{message}} </h3> 
+    <!-- <h3 [ngClass]="{'text':  isClicked}"> {{message}} </h3>  -->   <!-- Using an Object-->
+    <!--  <h3 [ngClass]="['text']"> {{message}} </h3>  -->               <!-- Using an Array-->
+    <h3 [ngClass]="'text'"> {{message}} </h3>                 <!-- Using String-->
 </b> 
 
 <br>
@@ -128,7 +130,7 @@
 
 <!-- Component Communication -->
 
-<h2>Pipe</h2>
+<h2>Pipe & Custom Pipe</h2>
 <p>Name - {{name | titlecase}} , Salary - {{salary}}</p>  <!-- Capital First Character in  String -->
 <p>Name - {{name | uppercase}} , Salary - {{salary}}</p>  <!-- All Characters convert into Uppercase -->
 <p>Name - {{name | titlecase}} , Salary - {{salary | currency:"INR"}}</p>  <!-- Currency Pipe With INR Argument -->
@@ -136,7 +138,8 @@
 
 <p>Today : {{currentDate | date:"fullDate"}} </p> 
 
+<p>{{ { name: 'Yashil Busa', age: 21 } | json }}</p>
 
-
+<p>Phone Number : {{phoneNum | countryCode:"USA"}}</p>  <!-- Custom Pipe -->
 
 
