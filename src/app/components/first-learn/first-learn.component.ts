@@ -3,6 +3,8 @@ import { Component, Input, numberAttribute } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { EventEmitter } from '@angular/core';
 import { input , Output } from '@angular/core';
+import { User } from '../../../models/user';
+
 
 function formatname(value:string){
   return "Hello "+value;
@@ -53,9 +55,14 @@ export class FirstLearnComponent {
     @Input({alias:"username",transform:formatname}) friendname="";
     @Input({transform:numberAttribute}) s="";
 
-    @Output() myEvent = new EventEmitter();
+    // @Output() myEvent = new EventEmitter();
+    @Output() myEvent = new EventEmitter<User>();
+
 
     sendData(){
-      this.myEvent.emit("I'm Transfer The Data Child To Parent Component");
+      // this.myEvent.emit("I'm Transfer The Data Child To Parent Component");
+      this.myEvent.emit({name:this.name,newSalary:25000});
     }
-}
+
+    currentDate = new Date();
+} 

@@ -122,3 +122,21 @@
 <h2>Child to Parent , Data Transfer Using &#64;Output & EventEmitter</h2>
 <button (click)="sendData()">Send Data</button>
 <p>You Can Show The Output on Console.</p>
+
+<br>
+<hr>
+
+<!-- Component Communication -->
+
+<h2>Pipe</h2>
+<p>Name - {{name | titlecase}} , Salary - {{salary}}</p>  <!-- Capital First Character in  String -->
+<p>Name - {{name | uppercase}} , Salary - {{salary}}</p>  <!-- All Characters convert into Uppercase -->
+<p>Name - {{name | titlecase}} , Salary - {{salary | currency:"INR"}}</p>  <!-- Currency Pipe With INR Argument -->
+<p>Name - {{name | titlecase}} , Salary - {{salary | currency}}</p>  <!-- Currency Pipe and its by default take dollor -->
+
+<p>Today : {{currentDate | date:"fullDate"}} </p> 
+
+
+
+
+

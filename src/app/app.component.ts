@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FirstLearnComponent } from './first-learn/first-learn.component';
+import { FirstLearnComponent } from './components/first-learn/first-learn.component';
 import { CommonModule } from '@angular/common';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent {
     {id:4,name:"Sudhir",isSingle:true,salary:3000}
   ]
 
-  receiveData(e:string){
+  receiveData(e:User){
     console.log(e);
   }
 
