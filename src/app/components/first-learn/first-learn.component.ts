@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, numberAttribute } from '@angular/core';
+import { Component, Input, numberAttribute, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { EventEmitter } from '@angular/core';
 import { input , Output } from '@angular/core';
 import { User } from '../../../models/user';
 import { CountryCodePipe } from '../../pipes/country-code.pipe';
+import { HighlightDirective } from '../../directives/highlight.directive';
 
 
 function formatname(value:string){
@@ -14,12 +15,12 @@ function formatname(value:string){
 @Component({
   selector: 'app-first-learn',
   standalone: true,
-  imports: [FormsModule,CommonModule,CountryCodePipe],
+  imports: [FormsModule,CommonModule,CountryCodePipe,HighlightDirective],
   templateUrl: './first-learn.component.html',
   styleUrl: './first-learn.component.css'
 })
 
-export class FirstLearnComponent {
+export class FirstLearnComponent implements OnInit,OnDestroy,OnChanges{
   name = "Yashil";
   salary = 10000;
   isdisabled = false;
@@ -67,4 +68,28 @@ export class FirstLearnComponent {
 
     currentDate = new Date();
     phoneNum = 9876543210;
+
+    constructor(){
+      console.log("Constructor Called");
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+      //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+      //Add '${implements OnChanges}' to the class.
+      console.log("ngOnChanges Called",changes);
+      
+    }
+
+    ngOnInit(): void {
+      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+      //Add 'implements OnInit' to the class.
+      console.log("ngOnInit Called",this.name);
+    }
+
+    ngOnDestroy() {
+      //Called once, before the instance is destroyed.
+      //Add 'implements OnDestroy' to the class.
+      console.log("Component Destroyed");
+    }
+    
 } 

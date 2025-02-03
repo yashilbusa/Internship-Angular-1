@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { FirstLearnComponent } from './components/first-learn/first-learn.component';
 import { CommonModule } from '@angular/common';
 import { User } from '../models/user';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FirstLearnComponent,CommonModule], 
+  imports: [FirstLearnComponent,CommonModule,FormsModule], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -25,4 +26,7 @@ export class AppComponent {
     console.log(e);
   }
 
+  clear(){
+    this.users =[];
+  }
 }
