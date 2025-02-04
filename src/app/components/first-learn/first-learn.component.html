@@ -105,18 +105,24 @@
 <br>
 <hr>
 
-<h2>Pipe & Custom Pipe</h2>
+<h2>Pipe</h2>
 <p>Name - {{name | titlecase}} , Salary - {{salary}}</p> 
 <p>Name - {{name | uppercase}} , Salary - {{salary}}</p>  
 <p>Name - {{name | titlecase}} , Salary - {{salary | currency:"INR"}}</p> 
 <p>Name - {{name | titlecase}} , Salary - {{salary | currency}}</p> 
-
 <p>Today : {{currentDate | date:"fullDate"}} </p> 
+<p>Today : {{currentDate | date:"dd-MMM-yy"}} </p> 
+<p>Today : {{currentDate | date:"dd-MM-yy"}} </p> 
 
-<p>{{ { name: 'Yashil Busa', age: 21 } | json }}</p>
-
+<h2>Custom Pipe</h2>
 <p>Phone Number : {{phoneNum | countryCode:"USA"}}</p> 
 
+<h2>Json Pipe</h2>
+<p>{{ { name: 'Yashil Busa', age: 21 } | json }}</p>
+<p>Object - {{student | json}}</p>
+
+<h2>Async Pipe</h2>
+<!-- <p>Date - {{ currentTime | async }}</p> -->
 
 <br>
 <hr>
@@ -127,4 +133,3 @@
 
 <br>
 <hr>
-

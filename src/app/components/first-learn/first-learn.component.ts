@@ -6,6 +6,9 @@ import { input , Output } from '@angular/core';
 import { User } from '../../../models/user';
 import { CountryCodePipe } from '../../pipes/country-code.pipe';
 import { HighlightDirective } from '../../directives/highlight.directive';
+import { interval, map, Observable } from 'rxjs';
+
+
 
 
 function formatname(value:string){
@@ -69,9 +72,18 @@ export class FirstLearnComponent {
     currentDate = new Date();
     phoneNum = 9876543210;
 
-    constructor(){
-      console.log("Constructor Called");
+    student :any ={
+      name:"Yashil",
+      city:"Jamnagar",
+      stuId: 16
     }
 
-    
+    // currentTime: Observable<Date> = new Observable<Date>
+
+    // constructor(){
+    //   console.log("Constructor Called");
+    //   this.currentTime = interval(1000).pipe(
+    //     map(()=>new Date())
+    //   );
+    // }
 } 
