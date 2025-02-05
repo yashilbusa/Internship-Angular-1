@@ -60,13 +60,13 @@ export class FirstLearnComponent {
     @Input({alias:"username",transform:formatname}) friendname="";
     @Input({transform:numberAttribute}) s="";
 
-    // @Output() myEvent = new EventEmitter();
-    @Output() myEvent = new EventEmitter<User>();
+    @Output() myEvent = new EventEmitter();
+    // @Output() myEvent = new EventEmitter<User>();
 
 
     sendData(){
-      // this.myEvent.emit("I'm Transfer The Data Child To Parent Component");
-      this.myEvent.emit({name:this.name,newSalary:25000});
+      this.myEvent.emit("I'm Transfer The Data Child To Parent Component");
+      // this.myEvent.emit({name:this.name,newSalary:25000});
     }
 
     currentDate = new Date();
