@@ -79,7 +79,7 @@
 <button (click)="getMessage()">Click Me</button> 
 <b> 
     <h3 [ngClass]="{'text':  isClicked}"> {{message}} </h3>    
-     <h3 [ngClass]="['text']"> {{message}} </h3>              
+    <h3 [ngClass]="['text']"> {{message}} </h3>              
     <h3 [ngClass]="'text'"> {{message}} </h3>                
 </b> 
 
@@ -122,7 +122,7 @@
 <p>Object - {{student | json}}</p>
 
 <h2>Async Pipe</h2>
-<!-- <p>Date - {{ currentTime | async }}</p> -->
+<p>Date - {{ currentTime | async }}</p>
 
 <br>
 <hr>
