@@ -78,12 +78,12 @@ export class FirstLearnComponent {
       stuId: 16
     }
 
-    currentTime: Observable<Date> = new Observable<Date>
+    // currentTime: Observable<Date> = new Observable<Date>
 
-    constructor(){
-      console.log("Constructor Called");
-      this.currentTime = interval(1000).pipe(
-        map(()=>new Date())
-      );
-    }
+    // constructor(){
+    //   console.log("Constructor Called");
+    //   this.currentTime = interval(1000).pipe(
+    //     map(()=>new Date())
+    //   );
+    // }
 } 
